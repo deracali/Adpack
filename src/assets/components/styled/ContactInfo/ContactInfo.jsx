@@ -17,6 +17,12 @@ font-weight: 400;
     width: 403px;
 `;
 
+const ImgEl = styled(Img)`
+@media(max-width:1130px){
+    width:9%;
+}
+`;
+
 const Info = styled.span`
 display: flex;
     justify-content: flex-end;
@@ -48,11 +54,11 @@ export default function ContactInfo({ icon1, icon2, icon3 }) {
                 <Row>
                     <Img width="19.5px" height="19.5px" src={icon1} /> <InfoText>enquiry@adpackmgtconsults.com</InfoText></Row>
                 <Row>
-                    <Img width="19.5px" height="19.5px" src={icon2} /> <InfoText width>9A Shafi Sule St,
+                    <ImgEl width="19.5px" height="19.5px" src={icon2} /> <InfoText width>9A Shafi Sule St,
                         Lekki Phase 1, Lagos</InfoText>
                 </Row>
                 <Row>
-                    <Img width="19.5px" height="19.5px" src={icon3} /> <InfoText>+234 (0) 803 340 1429</InfoText>
+                    <ImgEl width="19.5px" height="19.5px" src={icon3} /> <InfoText>+234 (0) 803 340 1429</InfoText>
                 </Row>
             </Info>
         </ContactItem>

@@ -6,20 +6,29 @@ import Img from "../../styled/Img/Img";
 
 const ContentEl = styled(Content)``;
 
-const Wrap = styled.div``;
+const Wrap = styled.div`
+`;
 
 const Row = styled.div`
 display: grid;
     grid-template-columns: repeat(6,1fr);
     column-gap: 5%;
     margin-top:70px;
-`;
+
+   @media(max-width:900px){
+        grid-template-columns:repeat(3,1fr);
+        row-gap:10%;
+    }
+    // @media(max-width:700px){
+    //     grid-template-columns:1fr;
+    // }
+    `;
 
 export default function Trusted({ image1, image2, image3, image4, image5, image6 }) {
     return (
         <ContentEl>
             <Wrap>
-                <PrimaryText>
+                <PrimaryText alignSm>
                     <Tertairy size="24px" color="#00359B" >COMPANIES THAT TRUST US</Tertairy>
                 </PrimaryText>
                 <Row>

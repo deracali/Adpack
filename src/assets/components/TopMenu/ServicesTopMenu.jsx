@@ -41,24 +41,58 @@ color:${Colors.White};
 
 `;
 
+const ImgEl = styled(Img)`
+@media(max-width:1130px){
+    width:9%;
+}
+`;
+
+
+
 const ButtonStyled = styled(ButtonEl)``;
 
 const Nav = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+     @media(max-width:645px){
+        padding:0 30px;
+    }
 `;
 
 const NavList = styled.ul`
     display: flex;
-    gap: 50px;
+    gap: 91px;
     justify-content: center;
     align-items: center;
-`;
 
-const NavLists = styled(Paragraphs)`
+
+    @media(max-width:990px){
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:flex-start;
+        gap:70px;
+        font-size:24px;
+        position:fixed;
+        top:0;
+        right:-1000px;
+        height:100vh;
+        width:100vw;
+        background:${Colors.Primary};
+        box-shadow:0 40px 60px rgba(0,0,0,0.1);
+        padding: 100px 0 0 10px;
+        z-index:10;
+    }
+`;
+const NavLists = styled.li`
     color:${Colors.White};
     cursor:pointer;
+
+     :hover{
+        color:${Colors.Primary};
+    }
 `;
 
 const BannerItem = styled.div`
@@ -78,9 +112,9 @@ export default function ServicesTopMenu({ icon1, icon2 }) {
             <TopMenuEl>
                 <Info>
                     <Row>
-                        <Img width="19.5px" height="19.5px" src={icon1} /> <InfoText>(252) 555-0126</InfoText></Row>
+                        <ImgEl width="19.5px" height="19.5px" src={icon1} /> <InfoText>(252) 555-0126</InfoText></Row>
                     <Row>
-                        <Img width="19.5px" height="19.5px" src={icon2} /> <InfoText>info@adpack.com</InfoText>
+                        <ImgEl width="19.5px" height="19.5px" src={icon2} /> <InfoText>info@adpack.com</InfoText>
                     </Row>
                 </Info>
                 <Nav>
@@ -98,11 +132,10 @@ export default function ServicesTopMenu({ icon1, icon2 }) {
                         <NavLists onClick={() => nav("/Contact")}>
                             Contact us
                         </NavLists>
+                        <ButtonStyled btnBgColor btnColor>Request Consultant</ButtonStyled>
                     </NavList>
-                    <ButtonStyled btnBgColor btnColor>Request Consultant</ButtonStyled>
                 </Nav>
                 <BannerItem style={{ backgroundImage: `url(${HeroImg})` }}>
-
                 </BannerItem>
             </TopMenuEl>
         </>

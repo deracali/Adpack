@@ -3,52 +3,63 @@ import Button from "../styled/Button/Button";
 import Content from "../styled/Content"
 import TextComponent from "../styled/TextComponent";
 import Img from "../styled/Img/Img";
-import HeroImg1 from "../../Images/homePage-img1.png"
-import HeroImg2 from "../../Images/homePage-img2.png"
+import HeroImg from "../../Images/HeroImg.png"
+import { useEffect } from "react"
+import AOS from "aos"
+import "aos/dist/aos.css"
 
 const ContentEl = styled(Content)``;
 
-const TextItem = styled.div``;
+const TextItem = styled.div`
+@media(max-width:1070px){
+    margin: 0 auto;
+    width: 81%;
+    margin-bottom: 50px;
+}
+`;
 
 const HeroEl = styled.div`
 display:grid;
 grid-template-columns:repeat(2,1fr);
 position:relative;
+width:100%;
+
+@media(max-width:1070px){
+    grid-template-columns:1fr;
+}
 `;
 
-const HeroImage1 = styled(Img)`
-position: absolute;
-left: 57%;
-    top: -30%;
-    object-fit: contain;
+const HeroImage = styled(Img)`
     backdrop-filter: blur(1.10599px);
-`;
+    width:100%;
+ 
+    @media(max-width:1070px){
+        width:81%;
+        margin:0 auto;
+        display:flex;
+    }
 
-const HeroImage2 = styled(Img)`
-position: absolute;
-    left: 62%;
-    top: 40%;
-    object-fit:contain;
-    backdrop-filter: blur(1.09803px);
 `;
-
 
 const ImgItem = styled.div``;
 
 const Imgwrap = styled.div``;
 
 export default function HeroHomePage() {
+    useEffect(() => {
+        AOS.init({ duration: 2000 });
+    }, [])
+
     return (
         <ContentEl>
-            <HeroEl>
+            <HeroEl data-aos="fade-up">
                 <TextItem>
                     <TextComponent />
                     <Button button="Request Consultant" />
                 </TextItem>
                 <ImgItem>
                     <Imgwrap>
-                        <HeroImage1 width="40%" height="100%" src={HeroImg1} alt="Man on a video call meeting" />
-                        <HeroImage2 width="40%" height="100%" src={HeroImg2} alt="Two ladies having a chat" />
+                        <HeroImage src={HeroImg} />
                     </Imgwrap>
                 </ImgItem>
             </HeroEl>

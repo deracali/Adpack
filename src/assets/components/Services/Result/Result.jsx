@@ -24,7 +24,7 @@ export default function Result() {
     return (
         <ContentEl>
             <PrimaryText>
-                <Tertairy size="64px" weight="500">Through collaboration with our partners, we always strive for remakrable results.</Tertairy>
+                <Tertairy size="3.5rem" sizeSm="3.1rem" weight="500">Through collaboration with our partners, we always strive for remakrable results.</Tertairy>
             </PrimaryText>
             <ResultWrap>
                 <ResultItem>

@@ -13,9 +13,9 @@ const BoxWrap = styled.div`
     display: grid;
     grid-template-columns: repeat(2,1fr);
 
-    // @media(max-width:1180px){
-    //     grid-template-columns: 1fr;  
-    // }
+    @media(max-width:600px){
+        grid-template-columns: 1fr;  
+    }
 `;
 
 const BoxItem = styled.div`

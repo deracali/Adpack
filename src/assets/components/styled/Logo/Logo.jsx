@@ -6,8 +6,11 @@ const TopMenuLogo = styled(Paragraphs)`
 font-weight:900;
 font-size:32px;
 line-height:39px;
-color:${Colors.Primary}
+color:${Colors.Primary};
 
+@media(max-width:1070px){
+    display:${(p) => (p.display ? "none" : "")};
+    }
 `;
 
 

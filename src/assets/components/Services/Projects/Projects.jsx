@@ -12,6 +12,10 @@ const RowItem = styled.div``;
 const BoxWrap = styled.div`
     display: grid;
     grid-template-columns: repeat(2,1fr);
+
+     @media(max-width:600px){
+        grid-template-columns: 1fr;  
+    }
 `;
 
 const BoxItem = styled.div`

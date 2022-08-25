@@ -10,6 +10,7 @@ margin-left:${(p) => (p.mgLeft ? p.mgLeft : "0px")};
 
    @media(max-width:1183px){
        margin-left:${(p) => (p.mgLeftSm ? p.mgLeftSm : "0px")};
+   font-size:${(p) => (p.sizeSm ? p.sizeSm : "40px")};
     }
 `;
 

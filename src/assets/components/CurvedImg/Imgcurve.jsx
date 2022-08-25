@@ -15,6 +15,9 @@ const Wrapper = styled.div`
     @media(max-width:1130px){
         column-gap:3%;
     }
+     @media(max-width:1118px){
+        grid-template-columns: 1fr;
+    }
 `;
 
 const Title = styled.h3`
@@ -24,6 +27,13 @@ font-size:40px;
 
 const Text = styled(Paragraphs)`
 font-weight:400;
+
+ @media(max-width:1118px){
+       width: 50%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    }
+
 `;
 
 const ImgDots = styled(Img)`
@@ -31,14 +41,28 @@ const ImgDots = styled(Img)`
     left: ${(p) => (p.left ? p.left : "388px")};
     top:${(p) => (p.top ? p.top : "-76px")};
     z-index: -1;
+
+     @media(max-width:1130px){
+         width:13%;
+         display:none;
+    }
 `;
 
 const ImgItem = styled.div`
 grid-column: ${(p) => (p.column ? "2" : "")};
+
+  @media(max-width:1118px){
+     grid-column: ${(p) => (p.column ? "1" : "")};
+    }
 `;
 
 const TextItem = styled.div`
 grid-row: ${(p) => (p.row ? "2" : "")};
+  
+@media(max-width:1118px){
+     grid-row: ${(p) => (p.row ? "4" : "")};
+     text-align:center;
+    }
 `;
 
 

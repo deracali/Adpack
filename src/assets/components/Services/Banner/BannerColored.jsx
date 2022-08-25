@@ -16,9 +16,15 @@ padding: 30px;
 const ButtonStyled = styled(ButtonEl)``;
 
 const Wrap = styled.div`
-display: grid;
+    display: grid;
     grid-template-columns: repeat(2,1fr);
     column-gap:50px;
+
+    @media(max-width:700px){
+         grid-template-columns:1fr;
+         width:50%;
+         margin:0 auto;
+    }
 `;
 
 const TextItem = styled.div``;

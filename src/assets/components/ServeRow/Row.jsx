@@ -15,6 +15,13 @@ const BoxWrap = styled.div`
     display: grid;
     grid-template-columns: repeat(3,1fr);
     column-gap: 3%;
+
+    @media(max-width:1078px){
+        grid-template-columns:repeat(2,1fr);
+    }
+    @media(max-width:700px){
+        grid-template-columns:1fr;
+    }
 `;
 
 const BoxItem = styled.div`
@@ -22,7 +29,11 @@ const BoxItem = styled.div`
     box-shadow: ${(p) => p.active ? "0px 0px 0px 4px rgb(245 241 241 / 37%)" : ""};
     padding: 60px 15px 43px 15px;
    
+       @media(max-width:700px){
+        padding-top:0px;
+    }
 `;
+
 
 const Icon = styled.div`
     width: 25%;
@@ -51,12 +62,16 @@ export default function Row({ headertext, subheading, image1, image2, image3, su
     const [Active2, setActive2] = useState(false)
     const [Active3, setActive3] = useState(false)
 
+    useEffect(() => {
+        AOS.init({ duration: 2000 });
+    }, [])
     return (
-        <ContentEl>
-            <RowItem>
-                <PrimaryText>
+
+        <ContentEl margin="182px 0 80px 0" marginSm>
+            <RowItem data-aos="fade-down">
+                <PrimaryText alignSm>
                     <Tertairy>{headertext}</Tertairy>
-                    <SubHeading width="50rem" margin="1.5rem 0">{subheading}</SubHeading>
+                    <SubHeading widthSm width="100%" margin="1.5rem 0">{subheading}</SubHeading>
                 </PrimaryText>
                 <BoxWrap>
                     <BoxItem active={Active1}

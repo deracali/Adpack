@@ -16,31 +16,41 @@ color:${Colors.Primary2};
 
 
 const BoxContactEl = styled.div`
-width: 95%;
-height: 618px;
-background: ${Colors.White};
-box-shadow: 0px 36px 108px 8px rgba(210, 210, 210, 0.07);
+    width: 95%;
+    height: 38.6rem;
+    background: ${Colors.White};
+    box-shadow: 0px 36px 108px 8px rgba(210, 210, 210, 0.07);
     margin: 0 auto;
     display:grid;
     grid-template-columns:1fr 1.6fr;
     margin-bottom:50px;
     padding:10px;
+
+    @media(max-width:946px){
+         grid-template-columns:1fr;
+         height:100%;
+    }
 `;
 
 const AddressWrap = styled.div`
-display: flex;
+    display: flex;
     flex-direction: row;
     align-items: flex-start;
     padding: 64px 24px;
     gap: 8px;
-    width: 470px;
-    height: 603px;
+    width: 28.3rem;
+    height: 37.6rem;
     background: ${Colors.Primary};
+
+    @media(max-width:946px){
+        width:100%;
+        justify-content:center;
+    }
 `;
 
 const ButtonStyled = styled(ButtonEl)`
-width:25%; 
-margin:3.1rem;
+width:40%; 
+margin:2.1rem;
 
 @media(max-width:1130px){
     width:50%;
@@ -49,15 +59,15 @@ margin:3.1rem;
 `;
 
 const InfoInputWrap = styled.div`
-width:88%;
-height: 400px;
+    width:88%;
+    height: 400px;
     display: flex;
     flex-direction: column;
     margin: 100px 16px;
 `;
 
 const InfoInputItems = styled.div`
-display: flex;
+    display: flex;
     justify-content: space-around;
     margin-bottom: 30px;
 `;
@@ -79,13 +89,9 @@ border: none;
     max-width:${(p) => (p.Maxwidth ? p.Maxwidth : "")};
     margin-left:${(p) => (p.MarginLeft ? "" : "")};
      outline:none;
-    // ::placeholder{
-    //     margin-bottom:10px;
-    // }
-
-//     & :focus{
-//    
-// }
+    ::placeholder{
+        color:${Colors.Primary2};
+    }
     `;
 
 const SubjectWrap = styled.div`
@@ -96,9 +102,9 @@ const SubjectWrap = styled.div`
 `;
 
 const TextArea = styled.textarea`
-width:100%;
-max-width:37.9rem;
-border: none;
+    width:100%;
+    max-width:37.9rem;
+    border: none;
     border-bottom: 1px solid ${Colors.Primary2};
      outline:none;
 `;
@@ -110,9 +116,9 @@ margin-bottom:${(p) => (p.mgBottom ? "150px" : "")};
 export default function BoxContact() {
     return (
         <Wrap>
-            <PrimaryText>
+            <PrimaryText alignSm>
                 <Tertairy>Get In Touch</Tertairy>
-                <SubHeading center mgBottom="30px" color="#608985" width="50rem">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</SubHeading>
+                <SubHeading widthSm="100%" center mgBottom="30px" color="#608985" width="50rem">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</SubHeading>
             </PrimaryText>
             <BoxContactEl>
                 <AddressWrap>

@@ -18,10 +18,18 @@ width: 826px;`;
 
 const BoxWrap = styled.div`
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(3,1fr);
     column-gap: 3%;
     row-gap:30px;
     margin-top:50px;
+
+      @media(max-width:1000px){
+      grid-template-columns: repeat(2,1fr);
+    }
+
+      @media(max-width:700px){
+      grid-template-columns: 1fr;
+    }
 `;
 
 const BoxItem = styled.div`
@@ -40,19 +48,19 @@ const TextItem = styled.div`
 `;
 
 const SubText = styled(Paragraphs)`
-display: flex;
+    display: flex;
     align-items: center;
     text-align: center;
     flex-direction: column;
-    width: 189px;
-font-weight:700;
-margin:0 auto;
+    width: 100%;
+    font-weight:700;
+    margin:0 auto;
 `;
 
 const Text = styled(Paragraphs)`
-font-weight:400;
-text-align:center;
-width:22.5rem;
+    font-weight:400;
+    text-align:center;
+    width:22.5rem;
 
 @media(max-width:1130px){
     width:100%;
@@ -64,7 +72,7 @@ export default function Expertise({ headertext, subheading, image1, image2, imag
     return (
         <ContentEl>
             <RowItem>
-                <PrimaryText>
+                <PrimaryText alignSm>
                     <Tertairy>{headertext}</Tertairy>
                     <SubHeading margin="1.5rem 0">{subheading}</SubHeading>
                 </PrimaryText>

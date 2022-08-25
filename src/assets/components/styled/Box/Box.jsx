@@ -4,25 +4,31 @@ import Paragraphs from "../Paragraphs";
 
 
 const BoxEl = styled.div`
-width: 43.2rem;
-position: absolute;
+width: 42.2rem;
+    position: absolute;
     height: 47.6rem;
-    left: 30.4rem;
+    left: 22.4rem;
     z-index: -1;
-background: ${Colors.Primary};
+    background: ${Colors.Primary};
 
   @media (max-width: 1130px) {
     width: 38rem;
     height: 44.6rem;
     left: 24rem;
   }
+
+    @media(max-width:1118px){
+     position:unset;
+     height:34.6rem;
+     width:100%;
+    }
 `;
 
 const Wrap = styled.div``;
 
 const Text = styled(Paragraphs)`
-position: absolute;
-width: 32.9rem;
+    position: absolute;
+    width: 32.9rem;
     height: 240px;
     left: 6.9rem;
     top: 11.8rem;
@@ -37,20 +43,42 @@ width: 32.9rem;
     @media(max-width:1038px){
         width:22.9rem;
     }
+
+      @media(max-width:1118px){
+      position:unset;
+      margin:0 auto;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:27.1rem;
+    }
 `;
 
 const Title = styled.div`
-position: absolute;
+    position: absolute;
     left: 7.3rem;
     top: 39.6rem;
     line-height: 29px;
     color: ${Colors.White};
+
+      @media(max-width:1118px){
+      left:15.3rem;
+      top:100.6rem;
+    }
+      @media(max-width:1000px){
+      position:unset;
+        margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    }
 `;
 
 
 const Name = styled(Paragraphs)`
-display:block;
-font-weight: 700;
+    display:block;
+    font-weight: 700;
     font-size: 24px;
 `;
 

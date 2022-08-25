@@ -10,11 +10,15 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 const AppEl = styled.div`
   width: 100%;
   margin:0 auto;
-  max-width:1200px;
+  max-width:1140px;
   height:1400px;
+  padding:0 4rem;
 
    @media (max-width: 1166px) {
     padding:0 50px;
+  }
+   @media (max-width: 646px) {
+    padding:0 0px;
   }
 `;
 

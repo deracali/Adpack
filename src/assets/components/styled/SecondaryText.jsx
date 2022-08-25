@@ -6,10 +6,9 @@ const SecondaryTextEl = styled.h2`
 font-family: 'Inter';
 font-style: normal;
 font-weight: ${(p) => (p.weight ? p.weight : "700")};
-font-size: 64px;
+ font-size: clamp(2.8rem, 2.5vw, 1.8rem);
 line-height: 64px;
 color:${Colors.BOLD};
-width: ${(p) => (p.width ? p.width : "740px")};
 `;
 
 export default function SecondaryText({ width, weight, headingtext }) {

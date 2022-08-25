@@ -11,6 +11,10 @@ const Wrapper = styled.div`
     column-gap: 9%;
     position:relative;
     align-items:center;
+
+       @media(max-width:1118px){
+      grid-template-columns: 1fr;
+    }
 `;
 
 
@@ -19,9 +23,15 @@ const ImgDots = styled(Img)`
     left: ${(p) => (p.left ? p.left : "388px")};
     top:${(p) => (p.top ? p.top : "-76px")};
     z-index: -1;
+
+  
 `;
 
 const ImgItem = styled.div`
+  @media(max-width:1118px){
+      width:100%;
+    }
+
 `;
 
 

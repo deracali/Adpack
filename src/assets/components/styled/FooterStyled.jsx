@@ -28,6 +28,10 @@ const Nav = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+     @media(max-width:645px){
+        padding:0 30px;
+    }
 `;
 
 const NavList = styled.ul`
@@ -35,6 +39,10 @@ const NavList = styled.ul`
     gap: 50px;
     justify-content: center;
     align-items: center;
+
+     @media(max-width:645px){
+        display:none;
+    }
 `;
 
 const NavLists = styled(Paragraphs)`
@@ -73,7 +81,6 @@ export default function FooterStyled({ icon1, icon2, icon3, icon4 }) {
                         <Row>
                             <Img width="19.5px" height="19.5px" src={icon4} />
                         </Row>
-
                     </Info>
                 </Nav>
 

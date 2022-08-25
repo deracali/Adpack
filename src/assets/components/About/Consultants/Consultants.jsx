@@ -12,6 +12,13 @@ const RowItem = styled.div``;
 const BoxWrap = styled.div`
     display: grid;
     grid-template-columns: repeat(3,1fr);
+
+      @media(max-width:900px){
+        grid-template-columns:repeat(2,1fr);
+    }
+    @media(max-width:700px){
+        grid-template-columns:1fr;
+    }
 `;
 
 const BoxItem = styled.div`
@@ -21,22 +28,29 @@ const BoxItem = styled.div`
    
 `;
 
+
+
 const ImgWrap = styled.div`
 
-`;
+    `;
 
 const TextItem = styled.div`
-
-`;
+@media(max-width:900px){
+    text-align:center;
+}
+@media(max-width:700px){
+    text-align:center;
+}
+    `;
 
 const Name = styled(Paragraphs)`
-    font-weight:700;
-    margin:0.5rem 0 0; 
+font-weight: 700;
+margin: 0.5rem 0 0;
 `;
 
 const Position = styled(Paragraphs)`
-font-weight:400;
-margin:0.1rem 0; 
+font-weight: 400;
+margin: 0.1rem 0;
 `;
 
 export default function Consultants({ image1, image2, image3 }) {
@@ -51,7 +65,7 @@ export default function Consultants({ image1, image2, image3 }) {
                 <BoxWrap>
                     <BoxItem>
                         <ImgWrap>
-                            <Img width="396px" height="415px" src={image1} />
+                            <Img width="20rem" height="21.2rem" src={image1} />
                         </ImgWrap>
                         <TextItem>
                             <Name>
@@ -64,7 +78,7 @@ export default function Consultants({ image1, image2, image3 }) {
                     </BoxItem>
                     <BoxItem>
                         <ImgWrap>
-                            <Img width="396px" height="415px" src={image2} />
+                            <Img width="20rem" height="21.2rem" src={image2} />
                         </ImgWrap>
                         <TextItem>
                             <Name>
@@ -77,7 +91,7 @@ export default function Consultants({ image1, image2, image3 }) {
                     </BoxItem>
                     <BoxItem>
                         <ImgWrap>
-                            <Img width="396px" height="415px" src={image3} />
+                            <Img width="20rem" height="21.2rem" src={image3} />
                         </ImgWrap>
                         <TextItem>
                             <Name>
