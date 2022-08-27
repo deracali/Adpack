@@ -10,118 +10,97 @@ import { FaTimes } from "react-icons/fa";
 import { useState } from "react";
 
 const TopMenuEl = styled.div`
-        margin-top:10px
-        `;
+            margin-top:10px
+            `;
 
 const LogoStyled = styled.p`
-font-weight:900;
-font-size:32px;
-line-height:39px;
-color:${Colors.Primary};
+    font-weight:900;
+    font-size:32px;
+    line-height:39px;
+    color:${Colors.Primary};
 
-    @media(max-width:1070px){
-    display:none;
-        }
-    `;
-
-const Info = styled.span`
-            display: flex;
-            justify-content: flex-end;
-            align-items: flex-end;
-            gap:20px;
-
-            @media(max-width:1070px){
-                display:none;
+        @media(max-width:1070px){
+        display:none;
             }
         `;
 
-const View = styled.div`
-        display:none;
 
-        @media(max-width:1070px){
-        display:block;
-        }
-        `;
+const Info = styled.span`
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+                gap:20px;
+
+                @media(max-width:1070px){
+                    display:none;
+                }
+            `;
+
+const View = styled.div`
+            display:none;
+
+            @media(max-width:1070px){
+            display:block;
+            }
+            `;
 
 const ImgEl = styled(Img)`
-        @media(max-width:1130px){
-            width:9%;
-        }
-        `;
+            @media(max-width:1130px){
+                width:9%;
+            }
+            `;
 
 const Row = styled.span`
-            color:${Colors.Primary};
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            cursor:pointer;
-        `;
+                color:${Colors.Primary};
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                cursor:pointer;
+            `;
 
 const InfoText = styled(Paragraphs)`
-        margin-left:10px;
-        `;
+            margin-left:10px;
+            `;
 
 const ButtonItem = styled.div``;
 
 const Nav = styled.nav`
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
 
-            @media(max-width:1070px){
-                display:flex;
-                justify-content: space-around;
-                gap:26%;
+                @media(max-width:1070px){
+                    display:flex;
+                    justify-content: space-around;
+                    gap:26%;
+                    }
+
+                @media(max-width:645px){
+                    padding:0 30px;
                 }
+            `;
 
-            @media(max-width:645px){
-                padding:0 30px;
-            }
-        `;
+
 
 const MobileIcon = styled.div`
-        display:none;
-        font-size:44px;
-
-         @media(max-width:1070px){
-                display:block;
-                }
-        `;
-
-const NavList = styled.ul`
-            display: flex;
-            gap: 91px;
-            justify-content: center;
-            align-items: center;
-
+            display:none;
+            font-size:44px;
+            z-index:10;
 
             @media(max-width:1070px){
-                display:flex;
-                flex-direction:column;
-                align-items:center;
-                justify-content:flex-start;
-                gap:70px;
-                font-size:24px;
-                position:fixed;
-                top:0;
-                right:${(p) => (p.isOpened ? "0px" : "-1000px")};
-                height:100vh;
-                width:100vw;
-                background:${Colors.White};
-                box-shadow:0 40px 60px rgba(0,0,0,0.1);
-                padding: 100px 0 0 10px;
-                z-index:10;
-            }
-        `;
+                    display:block;
+                    }
+            `;
+
 
 const NavLists = styled.li`
-            color:${Colors.BOLD};
-            cursor:pointer;
-            font-size: clamp(1rem,2vw,1.2rem);
-            :hover{
-                color:${Colors.Primary};
-            }
-        `;
+                color:${Colors.BOLD};
+                cursor:pointer;
+                font-size: clamp(1.2rem,2vw,1rem);
+                :hover{
+                    color:${Colors.Primary};
+                }
+            `;
 
 export default function TopMenuNav({ icon1, icon2 }) {
     const [icon, setIcon] = useState(false);
@@ -143,7 +122,7 @@ export default function TopMenuNav({ icon1, icon2 }) {
                         <Logo text="MANAGEMENT" />
                     </View>
                     <LogoStyled>Adpack</LogoStyled>
-                    <NavList>
+                    <ul className={IsOpened ? "NavShow" : "Olist"}>
                         <NavLists onClick={() => nav("/")}>
                             Home
                         </NavLists>
@@ -159,12 +138,13 @@ export default function TopMenuNav({ icon1, icon2 }) {
                         <ButtonItem>
                             <Button btnBgColor="#fff" button="Request Consultant" />
                         </ButtonItem>
-                    </NavList>
-                    <MobileIcon onClick={() => {
-                        setIcon((prev) => !prev)
-                        // setIsOpened((previous) => !previous)
-                    }}>
-                        {icon ? <FaTimes isOpened={IsOpened} onClick={() => setIsOpened(false)} /> : <AiOutlineMenuUnfold isOpened={IsOpened} onClick={() => setIsOpened(true)} />}
+                    </ul>
+                    <MobileIcon
+                        onClick={() => {
+                            setIcon((prev) => !prev)
+                            setIsOpened((previous) => !previous)
+                        }}>
+                        {icon ? <FaTimes /> : <AiOutlineMenuUnfold />}
                     </MobileIcon>
                 </Nav>
             </TopMenuEl>

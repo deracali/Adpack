@@ -12,13 +12,12 @@ const AppEl = styled.div`
   margin:0 auto;
   max-width:1140px;
   height:1400px;
-  padding:0 4rem;
 
    @media (max-width: 1166px) {
     padding:0 50px;
   }
    @media (max-width: 646px) {
-    padding:0 0px;
+    padding:0 25px;
   }
 `;
 

@@ -12,6 +12,10 @@ margin-left:${(p) => (p.mgLeft ? p.mgLeft : "0px")};
        margin-left:${(p) => (p.mgLeftSm ? p.mgLeftSm : "0px")};
    font-size:${(p) => (p.sizeSm ? p.sizeSm : "40px")};
     }
+   @media(max-width:490px){
+       margin-left:${(p) => (p.mgLeftSm ? p.mgLeftSm : "0px")};
+        font-size:${(p) => (p.sizeSml ? p.sizeSml : "1.5rem")};
+    }
 `;
 
 

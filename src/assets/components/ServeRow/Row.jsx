@@ -6,56 +6,59 @@ import { useState } from "react";
 import Tertairy from "../styled/Tertairyh3";
 import SubHeading from "../styled/Subheading";
 import PrimaryText from "../styled/PrimaryText";
+import { useEffect } from "react"
+import AOS from "aos"
+import "aos/dist/aos.css"
+
 
 const ContentEl = styled(Content)``;
 
 const RowItem = styled.div``;
 
 const BoxWrap = styled.div`
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    column-gap: 3%;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        column-gap: 3%;
 
-    @media(max-width:1078px){
-        grid-template-columns:repeat(2,1fr);
-    }
-    @media(max-width:700px){
-        grid-template-columns:1fr;
-    }
-`;
+        @media(max-width:1078px){
+            grid-template-columns:repeat(2,1fr);
+        }
+        @media(max-width:700px){
+            grid-template-columns:1fr;
+        }
+    `;
 
 const BoxItem = styled.div`
-    background: white;
-    box-shadow: ${(p) => p.active ? "0px 0px 0px 4px rgb(245 241 241 / 37%)" : ""};
-    padding: 60px 15px 43px 15px;
-   
-       @media(max-width:700px){
-        padding-top:0px;
-    }
-`;
+        background: white;
+        box-shadow: ${(p) => p.active ? "0px 0px 0px 4px rgb(245 241 241 / 37%)" : ""};
+        padding: 60px 15px 43px 15px;
+    
+        @media(max-width:700px){
+            padding-top:0px;
+        }
+    `;
 
 
 const Icon = styled.div`
-    width: 25%;
-    margin: 0.5rem auto;
-`;
+        width: 25%;
+        margin: 0.5rem auto;
+    `;
 
 const TextItem = styled.div`
-text-align:center;
-`;
+    text-align:center;
+    `;
 
 const SubText = styled(Paragraphs)`
-    font-weight:700;
-    width: 137px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-`;
+        font-weight:700;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    `;
 
 const Text = styled(Paragraphs)`
-font-weight:400;
-`;
+    font-weight:400;
+    `;
 
 export default function Row({ headertext, subheading, image1, image2, image3, subtext1, text1, subtext2, text2, subtext3, text3 }) {
     const [Active1, setActive1] = useState(false)
@@ -71,7 +74,7 @@ export default function Row({ headertext, subheading, image1, image2, image3, su
             <RowItem data-aos="fade-down">
                 <PrimaryText alignSm>
                     <Tertairy>{headertext}</Tertairy>
-                    <SubHeading widthSm width="100%" margin="1.5rem 0">{subheading}</SubHeading>
+                    <SubHeading widthSm width="70%" margin="1.5rem 0">{subheading}</SubHeading>
                 </PrimaryText>
                 <BoxWrap>
                     <BoxItem active={Active1}

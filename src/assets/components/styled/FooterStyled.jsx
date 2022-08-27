@@ -6,14 +6,19 @@ import Img from "./Img/Img";
 import { useNavigate } from "react-router-dom";
 
 const NavMenuEl = styled.div`
-margin-top:10px
+    margin-top:10px
 `;
 
 const Info = styled.span`
-display: flex;
+    display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     gap:20px;
+
+    @media(max-width:360px){
+        gap:14px;
+        margin-left:40px;
+    }
 `;
 
 const Row = styled.span`
@@ -22,6 +27,12 @@ const Row = styled.span`
     justify-content:center;
     align-items:center;
     cursor:pointer;
+`;
+
+const ImgStyled = styled(Img)`
+@media(max-width:1142px){
+        width:100%%;
+    }
 `;
 
 const Nav = styled.nav`
@@ -71,15 +82,15 @@ export default function FooterStyled({ icon1, icon2, icon3, icon4 }) {
                     </NavList>
                     <Info>
                         <Row>
-                            <Img width="19.5px" height="19.5px" src={icon1} /> </Row>
+                            <ImgStyled width="19.5px" height="19.5px" src={icon1} /> </Row>
                         <Row>
-                            <Img width="19.5px" height="19.5px" src={icon2} />
+                            <ImgStyled width="19.5px" height="19.5px" src={icon2} />
                         </Row>
                         <Row>
-                            <Img width="19.5px" height="19.5px" src={icon3} />
+                            <ImgStyled width="19.5px" height="19.5px" src={icon3} />
                         </Row>
                         <Row>
-                            <Img width="19.5px" height="19.5px" src={icon4} />
+                            <ImgStyled width="19.5px" height="19.5px" src={icon4} />
                         </Row>
                     </Info>
                 </Nav>

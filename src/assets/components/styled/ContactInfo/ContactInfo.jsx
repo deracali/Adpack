@@ -5,14 +5,18 @@ import Tertairy from "../Tertairyh3";
 import Img from "../Img/Img";
 
 const ContactItem = styled.div`
-color:${Colors.White};
-padding: 8px;
+    color:${Colors.White};
+    padding: 8px;
     border-radius: 2px;
+    
+    @media(max-width:420px){
+        text-align:center;
+    }
 `;
 
 const Text = styled(Paragraphs)`
-font-weight:400;
-font-weight: 400;
+    font-weight:400;
+    font-weight: 400;
     color: #ffffffd1;
     width: 403px;
 `;
@@ -24,10 +28,14 @@ const ImgEl = styled(Img)`
 `;
 
 const Info = styled.span`
-display: flex;
+    display: flex;
     justify-content: flex-end;
     align-items: baseline;
     flex-direction:column;
+
+    @media(max-width:420px){
+        align-items:center;
+    }
 `;
 
 const Row = styled.span`
@@ -42,6 +50,10 @@ const InfoText = styled(Paragraphs)`
 margin-left:10px;
 color:#ffffffd1;
 width:${(p) => (p.width ? "150px" : "")}
+
+@media(max-width:746px){
+    width:100%;
+}
 `;
 
 

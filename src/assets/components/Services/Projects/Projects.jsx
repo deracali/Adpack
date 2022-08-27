@@ -4,6 +4,10 @@ import Paragraphs from "../../styled/Paragraphs";
 import Img from "../../styled/Img/Img";
 import Tertairy from "../../styled/Tertairyh3";
 import PrimaryText from "../../styled/PrimaryText";
+import { useEffect } from "react"
+import AOS from "aos"
+import "aos/dist/aos.css"
+
 
 const ContentEl = styled(Content)``;
 
@@ -44,10 +48,12 @@ margin:0.1rem 0;
 `;
 
 export default function Projects({ image1, image2, image3, image4, image5, image6 }) {
-
+    useEffect(() => {
+        AOS.init({ duration: 2000 });
+    }, [])
     return (
         <ContentEl>
-            <RowItem>
+            <RowItem data-aos="fade-left">
                 <PrimaryText align>
                     <Tertairy size="64px" weight="500">Past projects.</Tertairy>
                 </PrimaryText>

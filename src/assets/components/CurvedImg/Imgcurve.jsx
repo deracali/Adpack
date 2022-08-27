@@ -2,74 +2,84 @@ import styled from "styled-components";
 import Img from "../styled/Img/Img";
 import Content from "../styled/Content";
 import Paragraphs from "../styled/Paragraphs";
+import { useEffect } from "react"
+import AOS from "aos"
+import "aos/dist/aos.css"
+
 
 const ContentEl = styled(Content)``;
 
 const Wrapper = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 9%;
-    position:relative;
-    align-items:center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 9%;
+        position:relative;
+        align-items:center;
 
-    @media(max-width:1130px){
-        column-gap:3%;
-    }
-     @media(max-width:1118px){
-        grid-template-columns: 1fr;
-    }
-`;
+        @media(max-width:1130px){
+            column-gap:3%;
+        }
+        @media(max-width:1118px){
+            grid-template-columns: 1fr;
+        }
+    `;
 
 const Title = styled.h3`
-font-weight:700;
-font-size:40px;
-`;
+    font-weight:700;
+    font-size:40px;
+    `;
 
 const Text = styled(Paragraphs)`
-font-weight:400;
+    font-weight:400;
 
- @media(max-width:1118px){
-       width: 50%;
-    margin: 0 auto;
-    margin-bottom: 50px;
-    }
+    @media(max-width:1118px){
+        width: 50%;
+        margin: 0 auto;
+        margin-bottom: 50px;
+        }
+    @media(max-width:700px){
+        width: 100%;
+        }
 
-`;
+    `;
 
 const ImgDots = styled(Img)`
-    position: absolute;
-    left: ${(p) => (p.left ? p.left : "388px")};
-    top:${(p) => (p.top ? p.top : "-76px")};
-    z-index: -1;
+        position: absolute;
+        left: ${(p) => (p.left ? p.left : "388px")};
+        top:${(p) => (p.top ? p.top : "-76px")};
+        z-index: -1;
 
-     @media(max-width:1130px){
-         width:13%;
-         display:none;
-    }
-`;
+        @media(max-width:1130px){
+            width:13%;
+            display:none;
+        }
+    `;
 
 const ImgItem = styled.div`
-grid-column: ${(p) => (p.column ? "2" : "")};
+    grid-column: ${(p) => (p.column ? "2" : "")};
 
-  @media(max-width:1118px){
-     grid-column: ${(p) => (p.column ? "1" : "")};
-    }
-`;
+    @media(max-width:1118px){
+        grid-column: ${(p) => (p.column ? "1" : "")};
+        }
+    `;
 
 const TextItem = styled.div`
-grid-row: ${(p) => (p.row ? "2" : "")};
-  
-@media(max-width:1118px){
-     grid-row: ${(p) => (p.row ? "4" : "")};
-     text-align:center;
-    }
-`;
+    grid-row: ${(p) => (p.row ? "2" : "")};
+    
+    @media(max-width:1118px){
+        grid-row: ${(p) => (p.row ? "4" : "")};
+        text-align:center;
+        }
+    `;
 
 
 export default function ImgCurve({ image1, image2, image3, image4 }) {
+    useEffect(() => {
+        AOS.init({ duration: 2000 });
+    }, [])
     return (
         <ContentEl>
-            <Wrapper>
+            <Wrapper data-aos="fade-up">
                 <ImgItem>
                     <Img src={image1} />
                     <ImgDots width="152px" height="268px" src={image2} />

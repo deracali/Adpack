@@ -10,6 +10,10 @@ const PrimaryText = styled.div`
     @media(max-width:1183px){
         align-items: ${(p) => p.alignSm ? "center" : "baseline"};
     }
+
+    @media(max-width:490px){
+    text-align:center;
+    }
     `;
 
 export default PrimaryText;

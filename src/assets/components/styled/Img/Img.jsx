@@ -5,7 +5,7 @@ const Img = styled.img`
   height: ${(p) => (p.height ? p.height : "")};
   object-fit: ${(p) => (p.objFit ? p.objFit : "contain")};
 
-@media(max-width:1130px){
+@media(max-width:1142px){
    width: ${(p) => (p.widthSm ? p.widthSm : "100%")};
 }
   `;

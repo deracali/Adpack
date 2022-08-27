@@ -10,6 +10,7 @@ import FooterEl from "../styled/FooterEl";
 
 
 export default function Footer() {
+
     return (
         <FooterEl>
             <BoxContact />

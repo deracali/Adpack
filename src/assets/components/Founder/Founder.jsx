@@ -2,6 +2,9 @@ import styled from "styled-components";
 import Img from "../styled/Img/Img";
 import Content from "../styled/Content";
 import Box from "../styled/Box/Box";
+import { useEffect } from "react"
+import AOS from "aos"
+import "aos/dist/aos.css"
 
 const ContentEl = styled(Content)``;
 
@@ -37,9 +40,12 @@ const ImgItem = styled.div`
 
 
 export default function Founder({ image1, image2 }) {
+    useEffect(() => {
+        AOS.init({ duration: 2000 });
+    }, [])
     return (
         <ContentEl margin="150px 0 150px 0">
-            <Wrapper>
+            <Wrapper data-aos="fade-up">
                 <ImgItem>
                     <Img src={image1} />
                     <ImgDots left="-72px" top="315px" width="152px" height="268px" src={image2} />
